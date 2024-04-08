@@ -1,0 +1,39 @@
+Weather Application
+===================
+
+
+Assumptions & Constraints:
+--------------------------
+1. All temperatures are recorded in degree celsius.
+2. Any sensor can save a reading in the Application.
+3. Ideally we may prefer a timeseries DB but for simplicity, I am using MySQL DB for the actual run, while the test cases run on Hibernate in-memory DB.
+4. Average has not been rounded off (decimal places).
+5. No validation on sensorId, location or temperature value apart from data type restrictions.
+6. I am not sure how an actual sensor works, but assumption here is that the same sensor can report multiple locations' weather details at the same time. Hence the primary key might be a composite key consisting of sensorId + location + timestamp, but for the convenience I have just added an auto generated Id as the key field.
+7. Basic functional tests have been performed. Tested for upto 100 readings. Performance, High Availability or Regression testing has not been performed.
+8. Web page is not taken into consideration and the output to the REST APIs are simple text messages.
+9. I have not taken security into consideration.
+
+
+REST APIs:
+----------
+1. Welcome Page
+WeatherApp/Welcome
+
+2. Record a temperature reading
+WeatherApp/save-a-reading
+
+3. For average temperature of all sensors within a date range.
+WeatherApp/avg-reading-date-only/<from date>/<to date>
+
+4. For average temperature of specified sensor within a date range.
+WeatherApp/avg-reading-date-only/<from date>/<to date>?sensorId=<sensor>
+
+5. For average temperature of all sensors within a date-time range.
+WeatherApp/avg-reading/<from date time>/<to date time>
+
+6. For average temperature of specific sensor within a date time range.
+WeatherApp/avg-reading/<from date time>/<to date time>?sensorId=<sensor>
+
+
+Thank you for your time and patience !

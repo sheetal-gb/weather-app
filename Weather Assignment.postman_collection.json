@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "69b9fa08-e184-407b-bada-9d36a0e25632",
+		"name": "Weather Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33973017"
+	},
+	"item": [
+		{
+			"name": "Bulk Readings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sensorId\": \"{{sensor_id}}\",\r\n    \"temperature\": {{temperature}},\r\n    \"location\": \"{{location}}\",\r\n    \"readingTime\": \"{{time}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/save-a-reading",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"save-a-reading"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Single Reading",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sensorId\": \"Korea\",\r\n    \"temperature\": 14,\r\n    \"location\": \"Seoul\",\r\n    \"readingTime\": \"2024-02-18T16:15:30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/save-a-reading",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"save-a-reading"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AvgDateOnly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/avg-reading-date-only/:from/:to?sensorId=Korea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"avg-reading-date-only",
+						":from",
+						":to"
+					],
+					"query": [
+						{
+							"key": "sensorId",
+							"value": "Korea"
+						}
+					],
+					"variable": [
+						{
+							"key": "from",
+							"value": "20240218"
+						},
+						{
+							"key": "to",
+							"value": "20240221"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Avg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/avg-reading/:from/:to?sensorId=Korea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"avg-reading",
+						":from",
+						":to"
+					],
+					"query": [
+						{
+							"key": "sensorId",
+							"value": "Korea"
+						}
+					],
+					"variable": [
+						{
+							"key": "from",
+							"value": "2024-02-18T16:15:30"
+						},
+						{
+							"key": "to",
+							"value": "2024-02-21T17:15:30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllAvgDateOnly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/avg-reading-date-only/:from/:to",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"avg-reading-date-only",
+						":from",
+						":to"
+					],
+					"variable": [
+						{
+							"key": "from",
+							"value": "20240218"
+						},
+						{
+							"key": "to",
+							"value": "20240221"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllAvg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/WeatherApp/avg-reading/:from/:to",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WeatherApp",
+						"avg-reading",
+						":from",
+						":to"
+					],
+					"variable": [
+						{
+							"key": "from",
+							"value": "2024-02-18T00:00:00"
+						},
+						{
+							"key": "to",
+							"value": "2024-02-21T23:59:59"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

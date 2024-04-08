@@ -1,0 +1,10 @@
+http://localhost:8080/WeatherApp/save-a-reading
+
+http://localhost:8080/WeatherApp/avg-reading/2024-02-18T00:00:00/2024-02-21T23:59:59?sensorId=Korea
+
+http://localhost:8080/WeatherApp/avg-reading/2024-02-18T00:00:00/2024-02-21T23:59:59
+
+http://localhost:8080/WeatherApp/avg-reading-date-only/20240218/20240221?sensorId=Korea
+
+http://localhost:8080/WeatherApp/avg-reading-date-only/20240218/20240221
+
